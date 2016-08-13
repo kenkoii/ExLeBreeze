@@ -7,7 +7,8 @@ var mongoose = require('mongoose'),
 
 var bookSchema = new Schema({
     title: { type: String, required: true },
-    author: { type: String, required: true },
+    author: { type: mongoose.Schema.Types.ObjectId,
+        ref: 'Author', required: true },
     genre: { type: String, required: true },
     read: { type: Boolean, default: false },
     viewCount: { type: Number, default: 0 }
