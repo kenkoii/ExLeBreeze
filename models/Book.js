@@ -7,9 +7,13 @@ var mongoose = require('mongoose'),
 
 var bookSchema = new Schema({
     title: { type: String, required: true },
-    author: { type: mongoose.Schema.Types.ObjectId,
-        ref: 'Author', required: true },
+    author: {
+        id: String,
+        name: String
+    },
+    description: { type: String },
     genre: { type: String, required: true },
+    image: { type: String },
     read: { type: Boolean, default: false },
     viewCount: { type: Number, default: 0 }
 });

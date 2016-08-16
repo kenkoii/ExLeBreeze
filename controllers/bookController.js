@@ -2,7 +2,6 @@
  * Created by Kentoy on 8/13/2016.
  */
 var bookController = function(Book){
-
     var post = function(req,res){
         var book = new Book(req.body);
         book.save(function(err){

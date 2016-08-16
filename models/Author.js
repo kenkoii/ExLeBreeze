@@ -8,6 +8,8 @@ var mongoose = require('mongoose'),
 var authorSchema = new Schema({
     name: { type: String, required: true },
     country: { type: String, required: true },
+    bio: String,
+    image: { type: String },
     viewCount: { type: Number, default: 0 }
 });
 

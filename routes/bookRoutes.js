@@ -32,6 +32,7 @@ var routes = function(Book){
             console.log(req.body);
             req.book.title = req.body.title;
             req.book.author = req.body.author;
+            req.book.viewCount +=1;
             req.book.genre = req.body.genre;
             req.book.save(function(err){
                 if(err)
@@ -43,8 +44,13 @@ var routes = function(Book){
         .patch(function(req,res){
             if(req.body._id)
                 delete req.body._id;
-            for(var p in req.body){
-                req.book[p] = req.body[p];
+            if(req.body.viewCount){
+                req.book.viewCount += req.body.viewCount;
+            }else{
+                for(var p in req.body){
+
+                    req.book[p] = req.body[p];
+                }
             }
             req.book.save(function(err){
                 if(err)

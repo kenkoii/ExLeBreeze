@@ -1,0 +1,38 @@
+<!-- books.html -->
+<div class="container">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Books
+                <!--<small>Secondary Text</small>-->
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Project One -->
+    <div class="row" ng-repeat="book in books">
+        <div class="col-md-2">
+            <a href="#books/{{book._id}}">
+                <img class="img-responsive" src="{{book.image}}" alt="">
+            </a>
+            <hr>
+        </div>
+        <div class="col-md-10">
+            <h3>{{book.title}}
+                <small>by {{book.author.name}}</small>
+            </h3>
+            <h4>{{book.genre}}</h4>
+            <p>{{book.description}}</p>
+            <a class="btn btn-primary" href="#books/{{book._id}}">View Book <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+        </div>
+
+    </div>
+
+    <!-- /.row -->
+
+
+</div>
+<!--- /.container -->
